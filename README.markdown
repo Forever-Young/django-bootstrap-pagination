@@ -35,6 +35,16 @@ github @ http://www.github.com/jmcclell/django-bootstrap-pagination
 
 ### Setup
 
+Make sure you include 'request' context processor in your TEMPLATE_CONTEXT_PROCESSORS list in settings.py:
+
+```
+    TEMPLATE_CONTEXT_PROCESSORS = (
+        ...
+        'django.core.context_processors.request',
+        ...
+    )
+```
+
 Make sure you include bootstrap-pagination in your installed_apps list in settings.py:
 
 ```
@@ -63,7 +73,7 @@ the pagination tags:
                        (Accepts "true" or "false")
 - **first_label** - The label to use for the First page link
 - **last_label** - The label to use for the Last page link
-- **alignment** - How to align the pagination bar. Defaults to "center". 
+- **alignment** - How to align the pagination bar. Defaults to "center".
                   (Accepts "left", "center", and "right")
 - **url_view_name** - A named URL reference (such as one that might get passed inti the URL
                       template tag) to use as the URL template. Must be resolvable by the
@@ -112,12 +122,12 @@ Given a url configured such as:
 ```python
     archive_index_view = ArchiveIndexView.as_view(
         date_field='date',
-        paginate_by=10,            
+        paginate_by=10,
         allow_empty=True,
         queryset=MyModel.all(),
-        template_name='example/archive.html'    
+        template_name='example/archive.html'
     )
-    
+
     urlpatterns = patterns(
         'example.views',
         url(r'^$', archive_index_view, name='archive_index'),
@@ -173,7 +183,7 @@ simply provides a Previous and Next link.
                          and thus it is expected that there is a named "page" argument in the
                          URL referenced by **url_view_name**. This allows us to use pretty
                          pagination URLs such as "/page/1"
-                 
+
 **Usage**
 
 Usage is basically the same as for bootstrap_paginate. The simplest usage is:

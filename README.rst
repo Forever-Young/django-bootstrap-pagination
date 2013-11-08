@@ -39,6 +39,16 @@ Usage
 
 **Setup**
 
+Make sure you include 'request' context processor in your TEMPLATE_CONTEXT_PROCESSORS list in settings.py:
+
+
+  TEMPLATE_CONTEXT_PROCESSORS = (
+      ...
+      'django.core.context_processors.request',
+      ...
+  )
+
+
 Make sure you include bootstrap-pagination in your installed_apps list in settings.py:
 
 
@@ -92,9 +102,9 @@ url_view_name
   situations**
 
 url_param_name
-  Determines the name of the GET parameter for the page number. The default is "page". If no 
+  Determines the name of the GET parameter for the page number. The default is "page". If no
   **url_view_name** is defined, this string is appended to the url as "?{{url_param_name}}=1".
-  
+
 url_extra_args
   **Only valid when url_view_name is set.**
   Additional arguments to pass into reverse() to resolve the URL.
@@ -129,12 +139,12 @@ Given a url configured such as:
 
   archive_index_view = ArchiveIndexView.as_view(
       date_field='date',
-      paginate_by=10,            
+      paginate_by=10,
       allow_empty=True,
       queryset=MyModel.all(),
-      template_name='example/archive.html'    
+      template_name='example/archive.html'
   )
-    
+
   urlpatterns = patterns(
       'example.views',
        url(r'^$', archive_index_view, name='archive_index'),
@@ -180,7 +190,7 @@ next_title
 centered
   Boolean. Defines whether or not the links are centered. Defaults to false.
   (Accepts "true" or "false")
-  
+
 url_view_name
   A named URL reference (such as one that might get passed inti the URL template tag) to use as
   the URL template. Must be resolvable by the reverse() function. **If this option is not
@@ -188,9 +198,9 @@ url_view_name
   situations**
 
 url_param_name
-  Determines the name of the GET parameter for the page number. The default is "page". If no 
+  Determines the name of the GET parameter for the page number. The default is "page". If no
   **url_view_name** is defined, this string is appended to the url as "?{{url_param_name}}=1".
-  
+
 url_extra_args
   **Only valid when url_view_name is set.**
   Additional arguments to pass into reverse() to resolve the URL.

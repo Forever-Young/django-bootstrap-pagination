@@ -8,14 +8,14 @@ readme.close()
 
 setup(
     name='django-bootstrap-pagination',
-    version='0.1.12',
+    version='1.5.0',
     keywords="django bootstrap pagination templatetag",
     author=u'Jason McClellan',
     author_email='jason@jasonmccllelan.net',
     packages=find_packages(),
     url='https://github.com/jmcclell/django-bootstrap-pagination',
     license='MIT licence, see LICENCE',
-    description='Render Django Page objects as Bootstrap Pagination compatible HTML',
+    description='Render Django Page objects as Bootstrap 3.x Pagination compatible HTML',
     long_description=readme_text,
     zip_safe=False,
     include_package_data=True,

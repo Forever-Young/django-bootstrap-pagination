@@ -1,5 +1,7 @@
 ## Django Bootstrap Pagination
 
+**Note:** This version is compatible with Bootstrap 3.x only! Please use the 1.0.x branch for Bootstrap 2 support.
+
 This application serves to make using Twitter's Bootstrap Pagination styles
 work seamlessly with Django Page objects. By passing in a Page object and
 one or more optional arguments, Bootstrap pagination bars and pagers can
@@ -35,21 +37,11 @@ github @ http://www.github.com/jmcclell/django-bootstrap-pagination
 
 ### Setup
 
-Make sure you include 'request' context processor in your TEMPLATE_CONTEXT_PROCESSORS list in settings.py:
-
-```
-    TEMPLATE_CONTEXT_PROCESSORS = (
-        ...
-        'django.core.context_processors.request',
-        ...
-    )
-```
-
-Make sure you include bootstrap-pagination in your installed_apps list in settings.py:
+Make sure you include bootstrap_pagination in your installed_apps list in settings.py:
 
 ```
     INSTALLED_APPS = (
-        'bootstrap-pagination',
+        'bootstrap_pagination',
     )
 ```
 
@@ -58,6 +50,14 @@ the pagination tags:
 
 ```
     {% load bootstrap_pagination %}
+```
+
+Finally, make sure that you have the request context processor enabled:
+
+```
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
+)
 ```
 
 # bootstrap_paginate

@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jmcclell/django-bootstrap-pagination.png?label=ready)](https://waffle.io/jmcclell/django-bootstrap-pagination)
 ## Django Bootstrap Pagination
 
 **Note:** This version is compatible with Bootstrap 3.x only! Please use the 1.0.x branch for Bootstrap 2 support.
@@ -73,8 +74,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
                        (Accepts "true" or "false")
 - **first_label** - The label to use for the First page link
 - **last_label** - The label to use for the Last page link
-- **alignment** - How to align the pagination bar. Defaults to "center".
-                  (Accepts "left", "center", and "right")
 - **url_view_name** - A named URL reference (such as one that might get passed inti the URL
                       template tag) to use as the URL template. Must be resolvable by the
                       reverse() function. **If this option is not specified, the tag simply
@@ -197,3 +196,7 @@ A somewhat more advanced usage might look like:
 ```
     {% bootstrap_pager page_obj previous_label="Newer Posts" next_label="Older Posts" url_view_name="post_archive_paginated" %}
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jmcclell/django-bootstrap-pagination/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
